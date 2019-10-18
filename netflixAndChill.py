@@ -22,12 +22,14 @@ for s in output:
 x_axis = int(x_axis) / 2
 y_axis = int(y_axis) / 2
 
+num = int(input("Enter Unix Epoch: "))
+
 # poor man scheduler
-while time.time() < 1571357429:
+while time.time() < num:
     # do nothing
     print("waiting\n")
 pyautogui.click(x_axis, y_axis);
-print time.time(
+print time.time()
 
 def representsInt(s):
     try: 
