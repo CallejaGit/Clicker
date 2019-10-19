@@ -7,13 +7,13 @@ def waiting(tick):
     if tick == 0:
         os.system('clear')
         print("waiting")
-    elif tick == 100000:
+    elif tick == 1000000:
         os.system('clear')
         print("waiting.")
-    elif tick == 200000:
+    elif tick == 2000000:
         os.system('clear')
         print("waiting..")
-    elif tick == 300000:
+    elif tick == 3000000:
         os.system('clear')
         print("waiting...")
 
@@ -45,9 +45,6 @@ while time.time() < num:
     # do nothing
 
     waiting(tick)
-    tick = (tick + 1) % 500000
+    tick = (tick + 1) % 5000000
 pyautogui.click(x_axis, y_axis)
 print time.time()
-
-
-
