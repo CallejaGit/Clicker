@@ -3,6 +3,20 @@ import subprocess
 import time
 import os
 
+def waiting(tick):
+    if tick == 0:
+        os.system('clear')
+        print("waiting")
+    elif tick == 100000:
+        os.system('clear')
+        print("waiting.")
+    elif tick == 200000:
+        os.system('clear')
+        print("waiting..")
+    elif tick == 300000:
+        os.system('clear')
+        print("waiting...")
+
 output = subprocess.Popen('xrandr | grep "\*" | cut -d" " -f4',shell=True, stdout=subprocess.PIPE).communicate()[0]
 x_axis, y_axis = "", ""
 
@@ -29,28 +43,11 @@ num = int(input("Enter Unix Epoch: "))
 tick = 0;
 while time.time() < num:
     # do nothing
-    os.system('clear')
 
-    wait(tick)
-    tick = (tick + 1) % 500
+    waiting(tick)
+    tick = (tick + 1) % 500000
 pyautogui.click(x_axis, y_axis)
 print time.time()
 
-def representsInt(s):
-    try: 
-        int(s)
-        return True
-    except ValueError:
-        return False
-
-def wait(tick):
-    if tick == 0:
-        print("waiting")
-    elif tick == 100:
-        print("waiting.")
-    elif tick == 200:
-        print("waiting..")
-    elif tick == 300:
-        print("waiting...")
 
 
